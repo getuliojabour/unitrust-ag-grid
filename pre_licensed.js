@@ -1,4 +1,12 @@
-
+Object.defineProperty(window, "baseShop", {
+  set: function (value) {
+    console.log("✅ baseShop atualizado:", value);
+    this._baseShop = value;
+  },
+  get: function () {
+    return this._baseShop;
+  }
+});
 
 // Formata percentuais
 function percentFormatter(params) {
