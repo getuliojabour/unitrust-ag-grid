@@ -1,16 +1,4 @@
-// Define um getter/setter com console.log sempre que window.baseShop for atualizado
-Object.defineProperty(window, "baseShop", {
-  set: function (value) {
-    console.log("✅ baseShop atualizado:", value);
-    this._baseShop = value;
-  },
-  get: function () {
-    return this._baseShop;
-  }
-});
 
-// Valor inicial (vazio ou vindo do Bubble)
-window.baseShop = [];
 
 // Formata percentuais
 function percentFormatter(params) {
