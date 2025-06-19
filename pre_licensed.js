@@ -1,7 +1,16 @@
-// Seus dados (adicione aqui todos os seus registros)
-window.baseShop = [
- 
-];
+// Define um getter/setter com console.log sempre que window.baseShop for atualizado
+Object.defineProperty(window, "baseShop", {
+  set: function (value) {
+    console.log("✅ baseShop atualizado:", value);
+    this._baseShop = value;
+  },
+  get: function () {
+    return this._baseShop;
+  }
+});
+
+// Valor inicial (vazio ou vindo do Bubble)
+window.baseShop = [];
 
 // Formata percentuais
 function percentFormatter(params) {
@@ -34,13 +43,11 @@ const gridOptions = {
     cellRendererParams: {
       suppressCount: true,
       innerRenderer: (params) => {
-        const name = params.value; // ex: “Peter Beckman”
+        const name = params.value;
         const count = params.node.allChildrenCount;
-        // nível 0 === pai (primeiro nível de agrupamento)
         if (params.node.level === 0) {
           return `Base Shop: ${name} (${count})`;
         }
-        // níveis filhos ficam só com o nome
         return name;
       },
     },
@@ -87,7 +94,7 @@ const gridOptions = {
     filter: true,
     resizable: true,
   },
-  rowData: baseShop,
+  rowData: window.baseShop,
   treeData: true,
   animateRows: true,
   groupDefaultExpanded: 1,
