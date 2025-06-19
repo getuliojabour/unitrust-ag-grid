@@ -87,7 +87,7 @@ const gridOptions = {
     filter: true,
     resizable: true,
   },
-  rowData: mockData,
+  rowData: baseShop,
   treeData: true,
   animateRows: true,
   groupDefaultExpanded: 1,
