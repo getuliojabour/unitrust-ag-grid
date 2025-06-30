@@ -1,5 +1,5 @@
 // Seus dados (adicione aqui todos os seus registros)
-const mockData = [
+window.mockData = [
   {
     ufg: "UFG230853",
     name: "Aaliyah Coats",
